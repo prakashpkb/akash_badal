@@ -29,11 +29,9 @@ $background-opacity:0.9;
         }
     }  
 }
+@import 'menu';
 *{
     box-sizing: border-box;
-}
-html{
-    font-size: 10px;
 }
 body{
     @include background();
@@ -91,7 +89,7 @@ main{
             padding: 0.4rem;
             &:hover{
                 color: $secondary_color;
-                @include easeOut();
+                @include easeOut;
             }
         }
     }
