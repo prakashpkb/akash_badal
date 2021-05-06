@@ -180,3 +180,24 @@ main {
     background: #515151;
     padding: 01.5rem;
     border-bottom: #4fade4fb 5px solid; }
+
+.projects {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr); }
+  .projects img {
+    height: 200px;
+    width: 300px;
+    border: 3px #fff solid; }
+    .projects img:hover {
+      opacity: 0.5;
+      border-color: #4fade4fb;
+      transition: all 0.5s ease-out; }
+  .projects .btn-light {
+    display: block;
+    padding: 0.5rem 1rem;
+    border: 0;
+    margin-bottom: 0.3rem; }
+    .projects .btn-light:hover {
+      background: #4fade4fb;
+      color: set-text-color(#4fade4fb); }
