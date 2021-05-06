@@ -214,9 +214,9 @@ main {
     padding: 1.5rem 2.5rem;
     margin-bottom: 2rem;
     transition: all 0.5s ease-out; }
-    .boxes div::hover {
+    .boxes div:hover {
       padding: 00.5rem 1.5rem;
-      background: #4fade4fb;
+      background: #97ee4f;
       color: set-text-color(#4fade4fb); }
-      .boxes div::hover span {
+      .boxes div:hover span {
         color: set-text-color(#4fade4fb); }

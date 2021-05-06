@@ -182,9 +182,9 @@ main{
         margin-bottom: 2rem;
         @include easeOut;
 
-        &::hover{
+        &:hover{
             padding: 00.5rem 1.5rem;
-            background: $secondary_color;
+            background: rgb(151, 238, 79);
             color: set-text-color($secondary_color);
             span{
                 color: set-text-color($secondary_color);
