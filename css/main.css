@@ -201,7 +201,8 @@ main {
     .projects .btn-light:hover {
       background: #4fade4fb;
       color: set-text-color(#4fade4fb); }
-
+.development {
+  color: black; }
 .boxes {
   display: flex;
   flex-wrap: wrap;
