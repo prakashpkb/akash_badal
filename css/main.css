@@ -297,12 +297,7 @@ main {
   color: #555;
 }
 .image-bottom a {
-  color: #555;
-  text-decoration: none;
   transition: color 0.3s;
-}
-.image-bottom a:hover {
-  color: #333;
 }
 .contact-text {
   display: block;
