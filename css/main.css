@@ -292,6 +292,9 @@ main {
 .image-bottom {
   display: none;
 }
+.contact-text {
+  display: block;
+}
 
 .welcome {
   color: #777;
@@ -376,6 +379,9 @@ footer a:hover {
     display: block;
     margin: 20px 0;
     text-align: center;
+  }
+  .contact-text {
+    display: none;
   }
   .icons {
     gap: 20px;
