@@ -360,27 +360,24 @@ footer a:hover {
 
 @media (max-width: 768px) {
   main {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
-
   .content, .image-container {
-      grid-column: 1;
+    grid-column: 1;
   }
-
   .image-container {
-      order: -1;
-      display: block;
-    }
-    .image-container img:nth-child(2) {
-      display: none;
-    }
-    .image-bottom {
-      display: block;
-      margin: 20px 0;
-      text-align: center;
+    order: -1;
+    display: block;
   }
-
+  .image-container img:nth-child(2) {
+    display: none;
+  }
+  .image-bottom {
+    display: block;
+    margin: 20px 0;
+    text-align: center;
+  }
   .icons {
-      gap: 20px;
+    gap: 20px;
   }
 }
