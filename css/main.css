@@ -289,6 +289,9 @@ main {
   flex-direction: column;
   gap: 20px;
 }
+.image-bottom {
+  display: none;
+}
 
 .welcome {
   color: #777;
@@ -366,6 +369,15 @@ footer a:hover {
 
   .image-container {
       order: -1;
+      display: block;
+    }
+    .image-container img:nth-child(2) {
+      display: none;
+    }
+    .image-bottom {
+      display: block;
+      margin: 20px 0;
+      text-align: center;
   }
 
   .icons {
