@@ -3,98 +3,405 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <title>My works</title>
+    <title>Work - Akash Kumar</title>
+    <style>
+        .work-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 40px 0 60px 0;
+            padding: 30px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .work-nav a {
+            color: #8b7355;
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 12px 24px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            background: #faf8f5;
+            border: 1.5px solid #e8dfd4;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .work-nav a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+            border-color: #d4c4b0;
+            background: #f5f1eb;
+            color: #6b5847;
+        }
+
+        .work-nav a.active {
+            background: #8b7355;
+            color: #faf8f5;
+            border-color: #8b7355;
+            box-shadow: 0 4px 16px rgba(139, 115, 85, 0.25);
+            font-weight: 500;
+        }
+
+        .project-section {
+            margin-bottom: 100px;
+            scroll-margin-top: 80px;
+        }
+
+        .project-section h2 {
+            color: #333;
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .project-images {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .project-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .project-text {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .project-text p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .project-link {
+            color: #6b8e23;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .project-link:hover {
+            color: #556b2f;
+        }
+
+        @media (max-width: 768px) {
+            .work-nav {
+                gap: 10px;
+                margin: 30px 0 40px 0;
+                padding: 20px 0;
+            }
+
+            .work-nav a {
+                font-size: 0.8rem;
+                padding: 10px 18px;
+            }
+
+            .project-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .project-images {
+                order: -1;
+            }
+
+            .project-section {
+                margin-bottom: 60px;
+            }
+
+            .project-section h2 {
+                font-size: 1.3rem;
+                margin-bottom: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .work-nav a {
+                font-size: 0.75rem;
+                padding: 8px 16px;
+            }
+        }
+        /* Active state script */
+        .work-nav a.active {
+            animation: activePulse 0.3s ease;
+        }
+
+        @keyframes activePulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
 </head>
 <body>
-  <div class="overlay"></div>
-  <header>
-    <div class="menu-btn">
-      <div class="btn-line"></div>
-      <div class="btn-line"></div>
-      <div class="btn-line"></div>
-    </div>
-    <nav class="menu">
-      <div class="menu-branding">
-        <div class="portrait"></div>
-
-      </div>
-      <ul class="menu-nav">
-        <li class="nav-item">
-        <a href="index.html" class="nav-link">
-        Home
-      </a>
-      </li>
-      <li class="nav-item">
-        <a href="about.html" class="nav-link">
-        About Me
-      </a>
-      </li>
-      <li class="nav-item current">
-        <a href="work.html" class="nav-link">
-        My Work
-      </a>
-      </li>
-      <li class="nav-item">
-        <a href="contact.html" class="nav-link">
-        How To Reach Me
-      </a>
-      </li>
-      </ul>
+    <nav>
+        <a href="index.html" class="logo">Akash Kumar</a>
+        <div class="nav-links">
+            <a href="index.html">Me</a>
+            <a href="work.html">Work</a>
+            <a href="journal.html">Journal</a>
+        </div>
     </nav>
-  </header>
-  <main id ="work">
-    <h1 class="lg-heading">My <span class="text-secondary">Work</span>
-    </h1>
-    <h2 class="sm-heading">
-    Check out some of my projects...
-    </h2>
-   <div class="projects">
-    <div class="item">
-        <a href="#!">
-            <img src="img/projects/project1.jpg" height="200px" width="300px" alt="project1">
-        </a>
-        <a href="#" class="btn-light">
-            <i class="fas fa-eye"></i>Project
-        </a>
-    </div>
-    <div class="item">
-        <a href="#!">
-            <img src="img/projects/project2.jpg" height="200px" width="300px" alt="project2">
-        </a>
-        <a href="#" class="btn-light">
-            <i class="fas fa-eye"></i>Project
-        </a>
-    </div>
-    <div class="item">
-        <a href="#!">
-            <img src="img/projects/project3.jpg" height="200px" width="300px" alt="project3">
-        </a>
-        <a href="#" class="btn-light">
-            <i class="fas fa-eye"></i>Project
-        </a>
-    </div>
-    <div class="item">
-        <a href="#!">
-            <img src="img/projects/project4.jpg" height="200px" width="300px" alt="project4">
-        </a>
-        <a href="#" class="btn-light">
-            <i class="fas fa-eye"></i>Project
-        </a>
-    </div>
-    <div class="item">
-        <a href="#!">
-            <img src="img/projects/project5.jpg" height="200px" width="300px" alt="project5">
-        </a>
-        <a href="#" class="btn-light">
-            <i class="fas fa-eye"></i>Project
-        </a>
-    </div>
-  </div>
-  </main>
 
-  <script src="js/main.js"></script>
+    <main style="display: block;">
+        <!-- Project Navigation with Colored Pills -->
+        <nav class="work-nav">
+            <a href="#crafting-connections">Crafting Contagious Connections</a>
+            <a href="#rerooting-ecologies">Rerooting Ecologies</a>
+            <a href="#beyond-borders">Beyond Borders</a>
+            <a href="#house-of-making">House of Making</a>
+            <a href="#paper-making">Making Paper Making Place</a>
+            <a href="#soil-craft">Soil and Craft Ecology</a>
+            <a href="#grassland">Grassland Crafted</a>
+            <a href="#craft-document">Craft Document</a>
+            <a href="#fiber-textiles">Fiber to Textiles</a>
+            <a href="#ramming-earth">Ramming Earth</a>
+        </nav>
+
+        <!-- Project 1: Crafting Contagious Connections -->
+        <section id="crafting-connections" class="project-section">
+            <h2>Crafting Contagious Connections - Pedagogies of the Hand</h2>
+            <div class="project-content">
+                <div class="project-images">
+                    <img src="img/work/crafting-connections-1.jpg" alt="Crafting Contagious Connections">
+                    <!-- <img src="img/work/crafting-connections-2.jpg" alt="Crafting Contagious Connections Workshop"> -->
+                </div>
+                <div class="project-text">
+                    <p>My master's project culminated in the creation of a vibrant knowledge-sharing space rooted in personal experience and the integration of hands, heart, and head in learning. Inspired by my grandmother's tactile teaching methods, Crafting Contagious Connections bridges vernacular, experiential learning with modern abstract education.</p>
+                    
+                    <p>The project materialized as a participatory space in the KABK garden, where I facilitated workshops in spinning, natural dyeing, and eco-printing, using primarily local resources. By prioritizing learning through doing, the space fostered intergenerational exchange, continuous feedback, and collaborative refinement.</p>
+                    
+                    <p>Grounded in John Dewey's experiential learning theory, my thesis critiques the Western emphasis on detached, theoretical knowledge transfer. Instead, it advocates for a holistic, inclusive, and nature-integrated pedagogy, one that values creativity, sustainability, and deep, tactile understanding, challenging conventional Western educational models.</p>
+                    
+                    <a href="https://graduation.kabk.nl/2024/akash-kumar" class="project-link" target="_blank">More: https://graduation.kabk.nl/2024/akash-kumar →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project 2: Rerooting Ecologies -->
+        <section id="rerooting-ecologies" class="project-section">
+            <h2>Rerooting Ecologies - Gardens of Hope</h2>
+            <div class="project-content">
+                <div class="project-images">
+                    <img src="img/work/rerooting-1.jpg" alt="Rerooting Ecologies">
+                    <!-- <img src="img/work/rerooting-2.jpg" alt="Gardens of Hope"> -->
+                </div>
+                <div class="project-text">
+                    <p>An exploration of ecological care and soil regeneration, integrating traditional knowledge systems with contemporary approaches to community care and sustainability. This project examines how gardens can serve as spaces of healing, learning, and regeneration.</p>
+                    
+                    <p>Through hands-on engagement with soil, plants, and natural cycles, Rerooting Ecologies creates pathways for reconnecting with the land and understanding our role in ecological systems.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project 3: Beyond Borders -->
+        <section id="beyond-borders" class="project-section">
+            <h2>Beyond Borders Material Culture</h2>
+            <div class="project-content">
+                <div class="project-images">
+                    <img src="img/work/beyond-borders-1.jpg" alt="Beyond Borders Material Culture">
+                    <!-- <img src="img/work/beyond-borders-2.jpg" alt="Material Culture Exchange"> -->
+                </div>
+                <div class="project-text">
+                    <p>An investigation into how material practices transcend geographical and cultural boundaries, creating dialogues between diverse making traditions. This project explores the universal language of craft and how traditional techniques travel, adapt, and transform across cultures.</p>
+                    
+                    <p>By examining material culture through a cross-cultural lens, the work challenges notions of cultural ownership and celebrates the fluid, interconnected nature of craft knowledge.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project 4: House of Making -->
+        <section id="house-of-making" class="project-section">
+            <h2>House of Making</h2>
+            <div class="project-content">
+                <div class="project-images">
+                    <img src="img/work/house-of-making-1.jpg" alt="House of Making">
+                    <!-- <img src="img/work/house-of-making-2.jpg" alt="Making Space"> -->
+                </div>
+                <div class="project-text">
+                    <p>A collaborative laboratory where different forms of making coexist, transform, and inspire new possibilities for material and cultural exchange. House of Making serves as both a physical and conceptual space for exploration, experimentation, and collective learning.</p>
+                    
+                    <p>This project creates environments where makers from diverse backgrounds can share skills, tools, and knowledge, fostering innovation through collaboration and mutual respect.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project 5: Making Paper Making Place -->
+        <section id="paper-making" class="project-section">
+            <h2>Making Paper Making Place</h2>
+            <div class="project-content">
+                <div class="project-images">
+                    <img src="img/work/paper-making-1.jpg" alt="Paper Making Process">
+                    <!-- <img src="img/work/paper-making-2.jpg" alt="Making Place"> -->
+                </div>
+                <div class="project-text">
+                    <p>An exploration of papermaking as both a craft practice and a way of understanding place, materiality, and the transformation of natural fibers. This project traces the journey from plant to pulp to paper, revealing the deep connections between material, process, and place.</p>
+                    
+                    <p>Through hands-on papermaking, participants discover how local materials can be transformed into surfaces for writing, drawing, and making, creating a tangible link to the landscape.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project 6: Soil and Craft Ecology -->
+        <section id="soil-craft" class="project-section">
+            <h2>Soil and Craft Ecology</h2>
+            <div class="project-content">
+                <div class="project-images">
+                    <img src="img/work/soil-craft-1.jpg" alt="Soil and Craft">
+                    <!-- <img src="img/work/soil-craft-2.jpg" alt="Craft Ecology"> -->
+                </div>
+                <div class="project-text">
+                    <p>Investigating the relationship between soil health, craft practices, and ecological thinking through hands-on material engagement. This project positions soil not just as a growing medium, but as a material for making and a teacher of ecological principles.</p>
+                    
+                    <p>By working directly with earth-based materials and understanding soil as a living ecosystem, the project bridges traditional earthwork techniques with contemporary ecological awareness.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project 7: Grassland Crafted -->
+        <section id="grassland" class="project-section">
+            <h2>Grassland Crafted</h2>
+            <div class="project-content">
+                <div class="project-images">
+                    <img src="img/work/grassland-1.jpg" alt="Grassland Materials">
+                    <!-- <img src="img/work/grassland-2.jpg" alt="Grassland Craft"> -->
+                </div>
+                <div class="project-text">
+                    <p>Working with grassland materials to explore sustainable harvesting, processing, and making practices rooted in ecological awareness. This project celebrates the abundance and versatility of grasses as a renewable material source.</p>
+                    
+                    <p>Through weaving, basketry, and other grass-based techniques, the work demonstrates how traditional knowledge can inform contemporary sustainable practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project 8: Craft Document -->
+        <section id="craft-document" class="project-section">
+            <h2>Craft Document</h2>
+            <div class="project-content">
+                <div class="project-images">
+                    <img src="img/work/craft-document-1.jpg" alt="Craft Documentation">
+                    <!-- <img src="img/work/craft-document-2.jpg" alt="Knowledge Preservation"> -->
+                </div>
+                <div class="project-text">
+                    <p>Documentation practices that capture the tacit knowledge embedded in craft processes, preserving skills and wisdom for future generations. This project explores how we can honor and transmit the unspoken knowledge that lives in the hands of makers.</p>
+                    
+                    <p>Through video, photography, writing, and participatory documentation methods, Craft Document creates archives that respect the complexity and nuance of traditional making practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project 9: Fiber to Textiles -->
+        <section id="fiber-textiles" class="project-section">
+            <h2>Fiber to Textiles</h2>
+            <div class="project-content">
+                <div class="project-images">
+                    <img src="img/work/fiber-textiles-1.jpg" alt="Fiber Processing">
+                    <!-- <img src="img/work/fiber-textiles-2.jpg" alt="Textile Making"> -->
+                </div>
+                <div class="project-text">
+                    <p>Tracing the journey from raw fiber to finished textile, exploring each step of transformation through hands-on making and traditional techniques. This project demystifies the textile creation process, revealing the labor, skill, and care involved in every thread.</p>
+                    
+                    <p>From harvesting and processing plant fibers to spinning, dyeing, and weaving, the work celebrates the complete textile cycle and the deep knowledge systems it contains.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project 10: Ramming Earth -->
+        <section id="ramming-earth" class="project-section">
+            <h2>Ramming Earth Natural Building</h2>
+            <div class="project-content">
+                <div class="project-images">
+                    <img src="img/work/ramming-earth-1.jpg" alt="Rammed Earth">
+                    <!-- <img src="img/work/ramming-earth-2.jpg" alt="Natural Building"> -->
+                </div>
+                <div class="project-text">
+                    <p>Engaging with earth as a building material, exploring rammed earth techniques and their potential for sustainable, place-based architecture. This project investigates ancient building methods through a contemporary lens, demonstrating the viability of earth construction today.</p>
+                    
+                    <p>Through hands-on building workshops and material experimentation, participants learn how soil composition, compaction techniques, and traditional wisdom combine to create durable, beautiful structures.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="icons">
+            <a href="mailto:studioakash97@gmail.com" target="_blank">
+                <i class="fas fa-envelope fa-2x"></i>
+            </a>
+            <a href="https://instagram.com/akash_badal_/" target="_blank">
+                <i class="fab fa-instagram fa-2x"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/akash-kumar-0b2174162/" target="_blank">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="https://x.com/akashbadal6" target="_blank">
+                <i class="fab fa-x-twitter fa-2x"></i>
+            </a>
+            <a href="https://www.facebook.com/akash.badal.585" target="_blank">
+                <i class="fab fa-facebook fa-2x"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer to detect which project is in view
+        const sections = document.querySelectorAll('.project-section');
+        const navLinks = document.querySelectorAll('.work-nav a');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-50% 0px -50% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Remove active class from all links
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    
+                    // Add active class to corresponding link
+                    const activeLink = document.querySelector(`.work-nav a[href="#${entry.target.id}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        // Smooth scroll behavior
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
