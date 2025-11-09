@@ -8,6 +8,21 @@
     <link rel="stylesheet" href="css/main.css">
     <title>Work - Akash Kumar</title>
     <style>
+        .nav-links a.current-page {
+            color: #333;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a.current-page::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #8b7355;
+        }
         .work-nav {
             display: flex;
             flex-wrap: wrap;
@@ -157,7 +172,7 @@
         <a href="index.html" class="logo">Akash Kumar</a>
         <div class="nav-links">
             <a href="index.html">Me</a>
-            <a href="work.html">Work</a>
+            <a href="work.html" class="current-page">Work</a>
             <a href="journal.html">Journal</a>
         </div>
     </nav>
