@@ -26,40 +26,63 @@
 
         .work-nav {
             display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 40px 0 60px 0;
-            padding: 30px 0;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
+            align-items: center;
+            gap: 0;
+            margin: 5px 0 20px 0;
+            padding: 5px 0;
+            overflow-x: auto;
+            white-space: nowrap;
+            background: transparent;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .work-nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 10px 0;
+        }
+
+        .work-nav::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .work-nav::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .work-nav::-webkit-scrollbar-thumb {
+            background: #d4c4b0;
+            border-radius: 3px;
         }
 
         .work-nav a {
             color: #8b7355;
             text-decoration: none;
-            font-size: 0.85rem;
-            padding: 12px 24px;
-            border-radius: 50px;
+            font-size: 0.75rem;
             transition: all 0.3s ease;
-            background: #faf8f5;
-            border: 1.5px solid #e8dfd4;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            flex-shrink: 0;
+            padding: 0 8px;
         }
 
         .work-nav a:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-            border-color: #d4c4b0;
-            background: #f5f1eb;
             color: #6b5847;
         }
 
         .work-nav a.active {
-            background: #8b7355;
-            color: #faf8f5;
-            border-color: #8b7355;
-            box-shadow: 0 4px 16px rgba(139, 115, 85, 0.25);
+            color: #333;
             font-weight: 500;
+        }
+
+        .work-nav .separator {
+            width: 1px;
+            height: 20px;
+            background-color: #8b7355;
+            flex-shrink: 0;
+            opacity: 0.4;
         }
 
         .project-section {
@@ -121,14 +144,17 @@
 
         @media (max-width: 768px) {
             .work-nav {
-                gap: 10px;
-                margin: 30px 0 40px 0;
-                padding: 20px 0;
+                margin: 5px 0 15px 0;
+                padding: 5px 0;
             }
 
             .work-nav a {
-                font-size: 0.8rem;
-                padding: 10px 18px;
+                font-size: 0.7rem;
+                padding: 0 6px;
+            }
+
+            .work-nav .separator {
+                margin: 0 8px;
             }
 
             .project-content {
@@ -152,19 +178,13 @@
 
         @media (max-width: 480px) {
             .work-nav a {
-                font-size: 0.75rem;
-                padding: 8px 16px;
+                font-size: 0.65rem;
+                padding: 0 5px;
             }
-        }
-        /* Active state script */
-        .work-nav a.active {
-            animation: activePulse 0.3s ease;
-        }
 
-        @keyframes activePulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            .work-nav .separator {
+                margin: 0 6px;
+            }
         }
     </style>
 </head>
@@ -179,17 +199,26 @@
     </nav>
 
     <main style="display: block;">
-        <!-- Project Navigation with Colored Pills -->
+        <!-- Project Navigation with Dashes -->
         <nav class="work-nav">
             <a href="#crafting-connections">Crafting Contagious Connections</a>
+            <div class="separator"></div>
             <a href="#rerooting-ecologies">Rerooting Ecologies</a>
+            <div class="separator"></div>
             <a href="#beyond-borders">Beyond Borders</a>
+            <div class="separator"></div>
             <a href="#house-of-making">House of Making</a>
+            <div class="separator"></div>
             <a href="#paper-making">Making Paper Making Place</a>
-            <a href="#soil-craft">Soil and Craft Ecology</a>
+            <div class="separator"></div>
+            <!-- <a href="#soil-craft">Soil and Craft Ecology</a>
+            <div class="separator"></div> -->
             <a href="#grassland">Grassland Crafted</a>
+            <div class="separator"></div>
             <a href="#craft-document">Craft Document</a>
-            <a href="#fiber-textiles">Fiber to Textiles</a>
+            <div class="separator"></div>
+            <!-- <a href="#fiber-textiles">Fiber to Textiles</a>
+            <div class="separator"></div> -->
             <a href="#ramming-earth">Ramming Earth</a>
         </nav>
 
@@ -199,14 +228,13 @@
             <div class="project-content">
                 <div class="project-images">
                     <img src="img/projects/crafting-connections-1.jpg" alt="Crafting Contagious Connections">
-                    <!-- <img src="img/projects/crafting-connections-2.jpg" alt="Crafting Contagious Connections Workshop"> -->
                 </div>
                 <div class="project-text">
-                    <p><strong>Crafting Contagious Connections</strong> grew out of my desire to create a space where learning feels alive — where the hands, heart, and head come together. Inspired by my grandmother’s tactile ways of teaching, the project bridges vernacular, experiential learning with more abstract forms of modern education.</p>
+                    <p><strong>Crafting Contagious Connections</strong> grew out of my desire to create a space where learning feels alive — where the hands, heart, and head come together. Inspired by my grandmother's tactile ways of teaching, the project bridges vernacular, experiential learning with more abstract forms of modern education.</p>
 
-                    <p>The project took shape in the KABK garden as a participatory space for workshops in spinning, natural dyeing, and eco-printing, using mostly local materials. The structure itself was built entirely from found and repurposed materials — old fabrics, reclaimed wood, and traditional wooden joints without a single metal screw. This choice reflected the project’s ethos of care, circularity, and connection to the rhythms of craftsmanship.</p>
+                    <p>The project took shape in the KABK garden as a participatory space for workshops in spinning, natural dyeing, and eco-printing, using mostly local materials. The structure itself was built entirely from found and repurposed materials — old fabrics, reclaimed wood, and traditional wooden joints without a single metal screw. This choice reflected the project's ethos of care, circularity, and connection to the rhythms of craftsmanship.</p>
 
-                    <p>It became a living, breathing space of intergenerational exchange and shared curiosity, where learning happens through doing, reflecting, and doing again. Rooted in John Dewey’s ideas of experiential learning, <em>Crafting Contagious Connections</em> questions the Western tendency toward detached, theoretical education. Instead, it invites a more holistic, inclusive, and nature-integrated way of learning — one that values creativity, regeneration, and deep, tactile understanding.</p>
+                    <p>It became a living, breathing space of intergenerational exchange and shared curiosity, where learning happens through doing, reflecting, and doing again. Rooted in John Dewey's ideas of experiential learning, <em>Crafting Contagious Connections</em> questions the Western tendency toward detached, theoretical education. Instead, it invites a more holistic, inclusive, and nature-integrated way of learning — one that values creativity, regeneration, and deep, tactile understanding.</p>
 
                     <a href="https://graduation.kabk.nl/2024/akash-kumar" class="project-link" target="_blank">More: https://graduation.kabk.nl/2024/akash-kumar →</a>
                 </div>
@@ -219,10 +247,9 @@
             <div class="project-content">
                 <div class="project-images">
                     <img src="img/projects/rerooting-1.jpg" alt="Rooting Ecologies Garden">
-                    <!-- <img src="img/projects/rerooting-2.jpg" alt="Kabk Garden Ecology"> -->
                 </div>
                 <div class="project-text">
-                    <p><strong>Rooting Ecologies</strong> is an ongoing action-based research that explores how gardens can become spaces of learning, negotiation, and regeneration in a time of climate disaster. The work draws inspiration from my upbringing in my grandmother’s garden and evolved further in the KABK garden in The Hague — a once-neglected plot that has grown into a vibrant ecosystem of plants, pollinators, and community life.</p>
+                    <p><strong>Rooting Ecologies</strong> is an ongoing action-based research that explores how gardens can become spaces of learning, negotiation, and regeneration in a time of climate disaster. The work draws inspiration from my upbringing in my grandmother's garden and evolved further in the KABK garden in The Hague — a once-neglected plot that has grown into a vibrant ecosystem of plants, pollinators, and community life.</p>
 
                     <p>Within such spaces, <em>Rooting Ecologies</em> cultivates encounters between people, soil, and place, transforming the act of gardening into a form of research, conversation, and care. The garden is not simply a site of cultivation, but a space of coexistence and dialogue where questions about the global and the bioregional are worked through in the presence of living systems.</p>
 
@@ -244,7 +271,6 @@
             <div class="project-content">
                 <div class="project-images">
                     <img src="img/projects/beyond-borders-1.jpg" alt="Beyond Borders Performance">
-                    <!-- <img src="img/projects/beyond-borders-2.jpg" alt="Material Movement"> -->
                 </div>
                 <div class="project-text">
                     <p><strong>Beyond Borders</strong> unfolds as a living story — a performative experience where materials speak, move, and remember. It invites us to trace the hidden pathways of the things that surround us: the fibers we wear, the metals we shape, the clays we mold, and the plastics that drift across oceans. Each carries its own rhythm, geography, and memory of touch and transformation.</p>
@@ -282,7 +308,6 @@
             <div class="project-content">
                 <div class="project-images">
                     <img src="img/projects/paper-making-1.jpg" alt="Papermaking Workshop">
-                    <!-- <img src="img/projects/paper-making-2.jpg" alt="Making Place through Paper"> -->
                 </div>
                 <div class="project-text">
                     <p><strong>Making Paper, Making Place</strong> is a hands-on workshop exploring the connections between craft, ecology, and community. Participants forage for papermaking materials — leaves, grasses, seed pods, old notes, and fabric scraps — to create handmade paper that embodies the landscape around them.</p>
@@ -295,7 +320,7 @@
         </section>
 
         <!-- Project 6: Soil and Craft Ecology -->
-        <section id="soil-craft" class="project-section">
+        <!-- <section id="soil-craft" class="project-section">
             <h2>Soil and Craft Ecology</h2>
             <div class="project-content">
                 <div class="project-images">
@@ -307,7 +332,7 @@
                     <p>By working directly with earth-based materials and understanding soil as a living ecosystem, the project bridges traditional earthwork techniques with contemporary ecological awareness.</p>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- Project 7: Grassland Crafted -->
         <section id="grassland" class="project-section">
@@ -340,7 +365,7 @@
         </section>
 
         <!-- Project 9: Fiber to Textiles -->
-        <section id="fiber-textiles" class="project-section">
+        <!-- <section id="fiber-textiles" class="project-section">
             <h2>Fiber to Textiles</h2>
             <div class="project-content">
                 <div class="project-images">
@@ -352,7 +377,7 @@
                     <p>From harvesting and processing plant fibers to spinning, dyeing, and weaving, the work celebrates the complete textile cycle and the deep knowledge systems it contains.</p>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- Project 10: Ramming Earth -->
         <section id="ramming-earth" class="project-section">
@@ -394,6 +419,7 @@
         // Intersection Observer to detect which project is in view
         const sections = document.querySelectorAll('.project-section');
         const navLinks = document.querySelectorAll('.work-nav a');
+        const workNav = document.querySelector('.work-nav');
 
         const observerOptions = {
             root: null,
@@ -429,6 +455,17 @@
                     targetSection.scrollIntoView({ behavior: 'smooth' });
                 }
             });
+        });
+
+        // Add scrolled class to work-nav when scrolling
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                workNav.classList.add('scrolled');
+            } else {
+                workNav.classList.remove('scrolled');
+            }
+            lastScrollY = window.scrollY;
         });
     </script>
 </body>
